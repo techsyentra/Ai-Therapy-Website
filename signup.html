@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<section>
+  <div class="login-box">
+    <form>
+      <h2>Sign Up</h2>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="person"></ion-icon></span>
+        <input type="text" required>
+        <label>Full Name</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+        <input type="email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="call"></ion-icon></span>
+        <input type="tel" required>
+        <label>Phone Number</label>
+      </div>
+
+      <!-- NEW FIELD ADDED -->
+      <div class="input-box">
+        <span class="icon"><ion-icon name="document-text"></ion-icon></span>
+        <input type="file" required>
+        <label>Professional License Copy</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+
+      <button type="submit">Register</button>
+
+      <div class="register-link">
+        <p>Already have an account?
+          <a href="login.html">Login</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
