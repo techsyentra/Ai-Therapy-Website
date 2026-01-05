@@ -3277,3 +3277,8 @@ ul.ullist {
     color: white;
     font-size: 14px;
 }
+
+
+.input-wrapper.title-lg {
+    display: none !important;
+}
