@@ -3282,3 +3282,10 @@ ul.ullist {
 .input-wrapper.title-lg {
     display: none !important;
 }
+
+
+.hero-card {
+    background-color: hsl(0deg 0% 100% / 0%) !important;
+    border-radius: var(--radius-12);
+    padding: 20px;
+}
