@@ -3289,3 +3289,10 @@ ul.ullist {
     border-radius: var(--radius-12);
     padding: 20px;
 }
+
+
+
+.hero-card.revealed {
+    display: none !important;
+}
+
