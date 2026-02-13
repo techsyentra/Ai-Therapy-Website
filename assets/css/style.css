@@ -3002,7 +3002,7 @@ img.w-100 {
 .timeline-item {
   display: flex;
   justify-content: flex-end;
-  padding-right: 60px;
+  padding-right: 290px;
   position: relative;
   margin-bottom: 60px;
 }
@@ -3407,4 +3407,5 @@ ul.ullist {
   min-height: 44px;
   display: flex;
   align-items: center;
+
 }
