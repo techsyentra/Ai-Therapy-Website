@@ -49,14 +49,14 @@
    * spacing
    */
 
-  --section-padding: 120px;
+  --section-padding: 60px;
 
   /**
    * box shadow
    */
 
-  --shadow-1: 0px 2px 20px hsla(209, 36%, 72%, 0.2);
-  --shadow-2: 0 4px 16px hsla(0, 0%, 0%, 0.06);
+  --shadow-1: 0px 8px 24px hsla(209, 36%, 72%, 0.25);
+  --shadow-2: 0px 12px 30px hsla(0, 0%, 0%, 0.08);
 
   /**
    * border radius
@@ -117,6 +117,7 @@ a {
 
 img {
   height: auto;
+  max-width: 100%;
 }
 
 input,
@@ -147,6 +148,7 @@ html {
   font-size: 10px;
   font-family: var(--ff-rubik);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -154,11 +156,12 @@ body {
   font-size: 1.6rem;
   color: var(--independece);
   line-height: 1.8;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body.loaded {
   overflow-y: visible;
+  overflow-x: hidden;
 }
 
 body.nav-active {
@@ -200,7 +203,8 @@ body.nav-active {
 
 .headline-md,
 .headline-sm {
-  line-height: 1.3;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
 }
 
 .headline-md,
@@ -254,6 +258,8 @@ body.nav-active {
   gap: 8px;
   border-radius: var(--radius-6);
   overflow: hidden;
+  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.1);
+  transition: all 0.3s ease;
 }
 
 .btn::before {
@@ -265,6 +271,11 @@ body.nav-active {
   border-radius: var(--radius-6);
   transition: var(--transition-2);
   z-index: -1;
+}
+
+.btn:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px hsla(0, 0%, 0%, 0.15);
 }
 
 .btn:is(:hover, :focus-visible)::before {
@@ -520,7 +531,18 @@ body.nav-active {
 \*-----------------------------------*/
 
 .hero-banner {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.hero-banner img {
+  width: 100%;
+  max-width: 500px; /* keep it contained visually cleanly */
+  height: auto;
+  object-fit: contain;
 }
 
 .hero {
@@ -1003,6 +1025,11 @@ body.nav-active {
     --headline-lg: 60px;
     --headline-md: 4.8rem;
 
+    /**
+     * spacing
+     */
+
+    --section-padding: 120px;
   }
 
 
@@ -1085,7 +1112,7 @@ body.nav-active {
   }
 
   .about-banner {
-    max-width: max-content;
+    max-width: 100%;
     margin-inline: auto;
   }
 
@@ -1161,8 +1188,9 @@ body.nav-active {
    */
 
   .hero-banner {
-    display: block;
-    max-width: max-content;
+    display: flex;
+    max-width: 100%;
+    margin-top: 0;
   }
 
   .hero .container {
@@ -1197,7 +1225,7 @@ body.nav-active {
 
 
   .about-banner {
-    margin-inline-end: -80px;
+    margin-inline-end: 0;
   }
 
 
@@ -2527,7 +2555,7 @@ img.w-100 {
   font-size: 36px;
   margin-bottom: 40px;
   text-align: center;
-  background: white;
+  background: #000000;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -3232,6 +3260,7 @@ img.w-100 {
   font-weight: 900;
   background: black;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
 }
@@ -3410,3 +3439,175 @@ ul.ullist {
 
 }
 
+/*-----------------------------------*\
+  #PRICING
+\*-----------------------------------*/
+
+.pricing {
+  background-color: var(--alice-blue);
+  padding-block: var(--section-padding);
+}
+
+.pricing .section-title {
+  margin-block-end: 50px;
+  font-size: var(--title-lg);
+  color: var(--midnight-green);
+  max-width: 600px;
+  margin-inline: auto;
+  font-family: var(--ff-rubik);
+  font-weight: var(--fw-500);
+}
+
+.pricing .section-subtitle {
+  color: var(--verdigris);
+  font-weight: var(--fw-700);
+  margin-block-end: 10px;
+  font-size: var(--headline-md);
+  font-family: var(--ff-oswald);
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 30px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pricing-card {
+  background-color: var(--white);
+  border-radius: var(--radius-12);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-1);
+  position: relative;
+  transition: var(--transition-1);
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-2);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--verdigris);
+}
+
+.card-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--verdigris);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: var(--fw-700);
+  box-shadow: var(--shadow-1);
+  white-space: nowrap;
+}
+
+.pricing-card .card-title {
+  text-align: center;
+  margin-block-end: 20px;
+  color: var(--midnight-green);
+}
+
+.pricing-card .price {
+  text-align: center;
+  margin-block-end: 15px;
+  color: var(--midnight-green);
+}
+
+.pricing-card .price strong {
+  font-size: 4rem;
+  font-family: var(--ff-oswald);
+  line-height: 1;
+}
+
+.pricing-card .price span {
+  font-size: 1.6rem;
+  color: var(--gray-web);
+  font-weight: var(--fw-500);
+}
+
+.rate-text {
+  text-align: center;
+  color: var(--independece);
+  margin-block-end: 30px;
+  font-size: 1.5rem;
+  background: var(--alice-blue);
+  padding: 10px;
+  border-radius: var(--radius-6);
+}
+
+.pricing-features {
+  margin-block-end: 30px;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-block-end: 15px;
+  color: var(--midnight-green);
+  font-size: 1.6rem;
+}
+
+.pricing-features li ion-icon {
+  color: var(--verdigris);
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.cta-btn {
+  justify-content: center;
+  margin-top: auto;
+  border-radius: 8px;
+  padding: 15px 30px;
+}
+
+.cta-btn:hover {
+  background-color: var(--midnight-green);
+}
+
+.rules-card .pricing-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-block-start: 10px;
+}
+
+.rules-card .pricing-rules li {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.rules-card .pricing-rules li ion-icon {
+  font-size: 2.8rem;
+  color: #F4C430;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rules-card .pricing-rules li strong {
+  display: block;
+  color: var(--midnight-green);
+  font-size: 1.8rem;
+  margin-block-end: 5px;
+}
+
+.rules-card .pricing-rules li p {
+  color: var(--independece);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
