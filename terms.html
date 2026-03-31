@@ -11,8 +11,7 @@
   -->
   <title>Terms of Use | Psychotherapy Now</title>
   <meta name="title" content="Psychotherapy Now - Terms of Use">
-  <meta name="description"
-    content="Terms of Use and Professional Use Agreement for Psychotherapy Now platform.">
+  <meta name="description" content="Terms of Use and Professional Use Agreement for Psychotherapy Now platform.">
 
   <!-- 
     - favicon
@@ -51,15 +50,16 @@
     }
 
     body {
-        background-color: var(--white); /* Main body stays white for header/footer consistency */
+      background-color: var(--white);
+      /* Main body stays white for header/footer consistency */
     }
 
     .terms-page-wrapper {
-        background: radial-gradient(circle at top, rgba(212, 175, 55, .10), transparent 30%),
-                    linear-gradient(180deg, #0b1220 0%, #0d1424 100%);
-        color: var(--terms-text);
-        padding-block: 160px 80px;
-        min-height: 100vh;
+      background: radial-gradient(circle at top, rgba(212, 175, 55, .10), transparent 30%),
+        linear-gradient(180deg, #0b1220 0%, #0d1424 100%);
+      color: var(--terms-text);
+      padding-block: 160px 80px;
+      min-height: 100vh;
     }
 
     .terms-wrap {
@@ -125,10 +125,14 @@
     }
 
     @media (max-width: 860px) {
-      .terms-grid { grid-template-columns: 1fr; }
+      .terms-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .toc, .content, .accept-box {
+    .toc,
+    .content,
+    .accept-box {
       background: var(--terms-panel);
       border: 1px solid var(--terms-line);
       border-radius: var(--terms-radius);
@@ -141,7 +145,8 @@
       padding: 18px;
     }
 
-    .toc h2, .content h2 {
+    .toc h2,
+    .content h2 {
       margin-top: 0;
       font-size: 20px;
       color: var(--terms-accent-2);
@@ -161,7 +166,9 @@
       transition: 0.2s;
     }
 
-    .toc a:hover { color: var(--terms-accent-2); }
+    .toc a:hover {
+      color: var(--terms-accent-2);
+    }
 
     .content {
       padding: 28px;
@@ -190,7 +197,8 @@
       color: #fff;
     }
 
-    .content p, .content li {
+    .content p,
+    .content li {
       font-size: 17px;
       color: var(--terms-text);
       line-height: 1.62;
@@ -218,9 +226,9 @@
     }
 
     .accept-row label {
-        font: 400 15px/1.5 Arial, Helvetica, sans-serif;
-        color: var(--terms-text);
-        cursor: pointer;
+      font: 400 15px/1.5 Arial, Helvetica, sans-serif;
+      color: var(--terms-text);
+      cursor: pointer;
     }
 
     .actions {
@@ -307,7 +315,6 @@
       margin-top: 10px;
       display: none;
     }
-
   </style>
 
 </head>
@@ -319,11 +326,22 @@
     <div class="circle"></div>
   </div>
 
+  <!-- Fail-safe: Hide preloader if script fails to load -->
+  <script>
+    setTimeout(() => {
+      const preloader = document.querySelector("[data-preloader]");
+      if (preloader && !preloader.classList.contains("loaded")) {
+        preloader.classList.add("loaded");
+        document.body.classList.add("loaded");
+      }
+    }, 5000);
+  </script>
+
   <!-- #HEADER -->
   <header class="header" data-header>
     <div class="container">
       <a href="index.html" class="logo" style="font-size: larger;">
-        <img src="./assets/images/Therapy logo.png" alt="Psychotherapy Now Logo" class="site-logo"
+        <img src="./assets/images/therapy-logo.png" alt="Psychotherapy Now Logo" class="site-logo"
           style="height: 50px; width: auto; display: block;">
       </a>
       <nav class="navbar" data-navbar>
@@ -340,7 +358,7 @@
           <li class="navbar-item"><a href="index.html" class="navbar-link title-md">Home</a></li>
           <li class="navbar-item"><a href="aboutus.html" class="navbar-link title-md">About Us</a></li>
           <li class="navbar-item"><a href="index.html#admission" class="navbar-link title-md">Admission</a></li>
-          <li class="navbar-item"><a href="conntact.html" class="navbar-link title-md">Contact Us</a></li>
+          <li class="navbar-item"><a href="contact.html" class="navbar-link title-md">Contact Us</a></li>
           <li class="navbar-item"><a href="id-requirements.html" class="navbar-link title-md">ID Requirements</a></li>
           <li class="navbar-item"><a href="signup.html" class="navbar-link title-md">Session</a></li>
           <li class="navbar-item auth-buttons-container">
@@ -360,13 +378,14 @@
 
   <main class="terms-page-wrapper">
     <div class="terms-wrap">
-      
+
       <section class="terms-hero">
         <div class="eyebrow">Psychotherapy Now</div>
         <h1>Terms of Use and Professional Use Agreement</h1>
         <p class="subtitle">
           Website-facing version for licensed clinicians. This styled page includes an acceptance workflow with
-          required checkboxes and a confirmation modal. The crisis-intervention section has been omitted, per instruction.
+          required checkboxes and a confirmation modal. The crisis-intervention section has been omitted, per
+          instruction.
         </p>
         <div class="meta">
           <div class="pill">Licensed clinicians only</div>
@@ -401,107 +420,140 @@
         <section class="content">
           <div class="terms-section-block" id="s1">
             <h2>1. Introduction</h2>
-            <p>Welcome to Psychotherapy Now (“Platform”). These Terms of Use govern your access to and use of the Platform. By accessing or using the Platform, you agree to be bound by these Terms. This Platform is intended exclusively for use by licensed mental health professionals.</p>
+            <p>Welcome to Psychotherapy Now (“Platform”). These Terms of Use govern your access to and use of the
+              Platform. By accessing or using the Platform, you agree to be bound by these Terms. This Platform is
+              intended exclusively for use by licensed mental health professionals.</p>
           </div>
 
           <div class="terms-section-block" id="s2">
             <h2>2. Nature of the Platform</h2>
-            <p>Psychotherapy Now is an AI-assisted interface designed to support licensed clinicians in professional training, reflective exercises, and supervised clinical interactions.</p>
-            <p>The Platform is a tool. It is not a provider of psychotherapy or medical care and does not deliver treatment, diagnosis, or clinical services. All outputs generated by the Platform are automated, informational, and non-clinical in nature.</p>
+            <p>Psychotherapy Now is an AI-assisted interface designed to support licensed clinicians in professional
+              training, reflective exercises, and supervised clinical interactions.</p>
+            <p>The Platform is a tool. It is not a provider of psychotherapy or medical care and does not deliver
+              treatment, diagnosis, or clinical services. All outputs generated by the Platform are automated,
+              informational, and non-clinical in nature.</p>
           </div>
 
           <div class="terms-section-block" id="s3">
             <h2>3. Eligibility</h2>
-            <p>You may use the Platform only if you are a licensed mental health professional, provide accurate licensure and identity verification, and agree to these Terms. Use by unlicensed individuals or independent patient use is strictly prohibited.</p>
+            <p>You may use the Platform only if you are a licensed mental health professional, provide accurate
+              licensure and identity verification, and agree to these Terms. Use by unlicensed individuals or
+              independent patient use is strictly prohibited.</p>
           </div>
 
           <div class="terms-section-block" id="s4">
             <h2>4. Permitted Uses</h2>
             <h3>4.1 Supervised Patient Use</h3>
-            <p>You may use the Platform in connection with a patient only when you are present in real time and maintain full control of the interaction.</p>
+            <p>You may use the Platform in connection with a patient only when you are present in real time and maintain
+              full control of the interaction.</p>
             <h3>4.2 Professional Training</h3>
-            <p>You may use the Platform for skill development, technique exploration, and simulation of clinical scenarios.</p>
+            <p>You may use the Platform for skill development, technique exploration, and simulation of clinical
+              scenarios.</p>
             <h3>4.3 Self-Reflective Use</h3>
-            <p>You may use the Platform for self-reflective professional exercises, subject to the terms of Section 5.</p>
+            <p>You may use the Platform for self-reflective professional exercises, subject to the terms of Section 5.
+            </p>
           </div>
 
           <div class="terms-section-block" id="s5">
             <h2>5. Self-Reflective Use and Role-Play</h2>
-            <p>You may use the Platform in a self-directed manner, including role-playing as a patient and prompting the AI to respond as a therapist.</p>
+            <p>You may use the Platform in a self-directed manner, including role-playing as a patient and prompting the
+              AI to respond as a therapist.</p>
             <h3>5.1 Definition</h3>
-            <p>All such use is defined as self-directed reflective simulation. It is not therapy, treatment, or clinical care.</p>
+            <p>All such use is defined as self-directed reflective simulation. It is not therapy, treatment, or clinical
+              care.</p>
             <h3>5.2 No Therapeutic Relationship</h3>
-            <p>Use of the Platform does not create a therapist-patient relationship, a clinical relationship, or any duty of care.</p>
+            <p>Use of the Platform does not create a therapist-patient relationship, a clinical relationship, or any
+              duty of care.</p>
             <h3>5.3 Your Responsibility</h3>
-            <p>You agree that you are not receiving therapy from the Platform, that you remain fully responsible for your own well-being, and that you are responsible for how you interpret and use all outputs.</p>
+            <p>You agree that you are not receiving therapy from the Platform, that you remain fully responsible for
+              your own well-being, and that you are responsible for how you interpret and use all outputs.</p>
             <h3>5.4 Not a Substitute for Care</h3>
-            <p>The Platform is not a substitute for psychotherapy, supervision, consultation, or medical or mental health treatment.</p>
+            <p>The Platform is not a substitute for psychotherapy, supervision, consultation, or medical or mental
+              health treatment.</p>
           </div>
 
           <div class="terms-section-block" id="s6">
             <h2>6. No Clinical Services Provided</h2>
-            <p>The Platform does not diagnose, treat, assess risk, or provide clinical recommendations. All outputs are generated by an artificial system and do not constitute professional advice.</p>
+            <p>The Platform does not diagnose, treat, assess risk, or provide clinical recommendations. All outputs are
+              generated by an artificial system and do not constitute professional advice.</p>
           </div>
 
           <div class="terms-section-block" id="s7">
             <h2>7. Use With Patients</h2>
-            <p>If you use the Platform in connection with a patient, you must be present at all times, you must maintain full control of the interaction, and you assume full clinical and legal responsibility. The Platform functions only as an adjunct tool.</p>
+            <p>If you use the Platform in connection with a patient, you must be present at all times, you must maintain
+              full control of the interaction, and you assume full clinical and legal responsibility. The Platform
+              functions only as an adjunct tool.</p>
           </div>
 
           <div class="terms-section-block" id="s8">
             <h2>8. Data and Privacy</h2>
-            <p>The Platform is designed to minimize data retention. No storage of session transcripts is intended, no retention of protected health information (PHI) is intended, and only limited operational metadata may be retained. You are responsible for ensuring compliance with HIPAA, state laws, and professional standards.</p>
+            <p>The Platform is designed to minimize data retention. No storage of session transcripts is intended, no
+              retention of protected health information (PHI) is intended, and only limited operational metadata may be
+              retained. You are responsible for ensuring compliance with HIPAA, state laws, and professional standards.
+            </p>
           </div>
 
           <div class="terms-section-block" id="s9">
             <h2>9. Professional Responsibility</h2>
-            <p>You acknowledge and agree that you remain the responsible licensed professional, retain full authority over all decisions, and that the Platform does not replace your judgment.</p>
+            <p>You acknowledge and agree that you remain the responsible licensed professional, retain full authority
+              over all decisions, and that the Platform does not replace your judgment.</p>
           </div>
 
           <div class="terms-section-block" id="s10">
             <h2>10. Limitation of Liability</h2>
-            <p>To the fullest extent permitted by law, the Platform and its operators shall not be liable for decisions you make, reliance on AI-generated content, or outcomes resulting from use. All responsibility remains with you.</p>
+            <p>To the fullest extent permitted by law, the Platform and its operators shall not be liable for decisions
+              you make, reliance on AI-generated content, or outcomes resulting from use. All responsibility remains
+              with you.</p>
           </div>
 
           <div class="terms-section-block" id="s11">
             <h2>11. Indemnification</h2>
-            <p>You agree to indemnify and hold harmless the Platform and its operators from any claims arising out of your use of the Platform, your clinical activities, or your interpretation of outputs.</p>
+            <p>You agree to indemnify and hold harmless the Platform and its operators from any claims arising out of
+              your use of the Platform, your clinical activities, or your interpretation of outputs.</p>
           </div>
 
           <div class="terms-section-block" id="s12">
             <h2>12. No Warranties</h2>
-            <p>The Platform is provided “as is” and “as available.” No warranties are made regarding accuracy, reliability, or clinical usefulness.</p>
+            <p>The Platform is provided “as is” and “as available.” No warranties are made regarding accuracy,
+              reliability, or clinical usefulness.</p>
           </div>
 
           <div class="terms-section-block" id="s13">
             <h2>13. Incorporation of Additional Policies</h2>
-            <p>You acknowledge that additional documents are incorporated into these Terms, including the Psychotherapy Now Legal and Compliance Binder, Therapist Agreement, and operational and safety policies. These documents are binding and form part of these Terms.</p>
+            <p>You acknowledge that additional documents are incorporated into these Terms, including the Psychotherapy
+              Now Legal and Compliance Binder, Therapist Agreement, and operational and safety policies. These documents
+              are binding and form part of these Terms.</p>
           </div>
 
           <div class="terms-section-block" id="s14">
             <h2>14. Termination</h2>
-            <p>Access may be suspended or terminated if these Terms are violated, licensure is invalid or unverifiable, or misuse of the Platform is detected.</p>
+            <p>Access may be suspended or terminated if these Terms are violated, licensure is invalid or unverifiable,
+              or misuse of the Platform is detected.</p>
           </div>
 
           <div class="terms-section-block" id="s15">
             <h2>15. Governing Law</h2>
-            <p>These Terms shall be governed by the laws of the State of New York, without regard to conflict of law principles.</p>
+            <p>These Terms shall be governed by the laws of the State of New York, without regard to conflict of law
+              principles.</p>
           </div>
 
           <div class="terms-section-block" id="s16">
             <h2>16. Acceptance</h2>
-            <p>By using the Platform, you confirm that you have read and understood these Terms, agree to be bound by them, and accept full professional responsibility.</p>
+            <p>By using the Platform, you confirm that you have read and understood these Terms, agree to be bound by
+              them, and accept full professional responsibility.</p>
           </div>
 
           <div class="accept-box">
             <h2>Acceptance Workflow</h2>
             <div class="accept-row">
               <input type="checkbox" id="cb1">
-              <label for="cb1">I am a licensed mental health professional and agree that this Platform is for clinician use only.</label>
+              <label for="cb1">I am a licensed mental health professional and agree that this Platform is for clinician
+                use only.</label>
             </div>
             <div class="accept-row">
               <input type="checkbox" id="cb2">
-              <label for="cb2">I understand that self-use on the Platform is defined as self-directed reflective simulation and not therapy, treatment, or clinical care.</label>
+              <label for="cb2">I understand that self-use on the Platform is defined as self-directed reflective
+                simulation and not therapy, treatment, or clinical care.</label>
             </div>
             <div class="accept-row">
               <input type="checkbox" id="cb3">
@@ -526,7 +578,7 @@
 
         <div class="footer-brand" data-reveal="bottom">
           <a href="index.html" class="logo">
-            <img src="./assets/images/Therapy logo.png" alt="Psychotherapy Now Logo" class="site-logo footer-logo"
+            <img src="./assets/images/therapy-logo.png" alt="Psychotherapy Now Logo" class="site-logo footer-logo"
               style="height: 50px; width: auto; display: block; margin-bottom: 8px;">
           </a>
 
@@ -630,7 +682,7 @@
             <a href="terms.html" class="text footer-link">Terms of Service</a>
           </li>
           <li>
-            <a href="conntact.html" class="text footer-link">Contact Us</a>
+            <a href="contact.html" class="text footer-link">Contact Us</a>
           </li>
           <li>
             <a href="index.html#faq" class="text footer-link">FAQs</a>
@@ -689,7 +741,8 @@
         <h2 id="modalTitle" style="margin:0; color:var(--terms-accent-2);">Confirm Acceptance</h2>
       </div>
       <div class="modal-body">
-        <p>You are confirming that you are a licensed clinician, that you understand the Platform is an AI-assisted tool rather than a provider of therapy, and that you agree to these Terms of Use.</p>
+        <p>You are confirming that you are a licensed clinician, that you understand the Platform is an AI-assisted tool
+          rather than a provider of therapy, and that you agree to these Terms of Use.</p>
       </div>
       <div class="modal-footer">
         <button class="terms-btn secondary" id="cancelBtn">Cancel</button>

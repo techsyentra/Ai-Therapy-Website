@@ -36,12 +36,23 @@
     <div class="circle"></div>
   </div>
 
+  <!-- Fail-safe: Hide preloader if script fails to load -->
+  <script>
+    setTimeout(() => {
+      const preloader = document.querySelector("[data-preloader]");
+      if (preloader && !preloader.classList.contains("loaded")) {
+        preloader.classList.add("loaded");
+        document.body.classList.add("loaded");
+      }
+    }, 5000);
+  </script>
+
   <!-- #HEADER -->
   <header class="header" data-header>
     <div class="container">
 
       <a href="index.html" class="logo" style="font-size: larger;">
-        <img src="./assets/images/Therapy logo.png" alt="Psychotherapy Now Logo" class="site-logo"
+        <img src="./assets/images/therapy-logo.png" alt="Psychotherapy Now Logo" class="site-logo"
           style="height: 50px; width: auto; display: block;">
       </a>
       <nav class="navbar" data-navbar>
@@ -73,7 +84,7 @@
             <a href="index.html#admission" class="navbar-link title-md">Admission</a>
           </li>
           <li class="navbar-item">
-            <a href="conntact.html" class="navbar-link title-md">Contact Us</a>
+            <a href="contact.html" class="navbar-link title-md">Contact Us</a>
           </li>
 
           <li class="navbar-item">
@@ -601,7 +612,7 @@
 
         <div class="footer-brand" data-reveal="bottom">
           <a href="index.html" class="logo">
-            <img src="./assets/images/Therapy logo.png" alt="Psychotherapy Now Logo" class="site-logo footer-logo"
+            <img src="./assets/images/therapy-logo.png" alt="Psychotherapy Now Logo" class="site-logo footer-logo"
               style="height: 50px; width: auto; display: block; margin-bottom: 8px;">
           </a>
 
@@ -705,7 +716,7 @@
             <a href="terms.html" class="text footer-link">Terms of Service</a>
           </li>
           <li>
-            <a href="conntact.html" class="text footer-link">Contact Us</a>
+            <a href="contact.html" class="text footer-link">Contact Us</a>
           </li>
           <li>
             <a href="index.html#faq" class="text footer-link">FAQs</a>
