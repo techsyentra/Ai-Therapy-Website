@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychotherapy Now - ID Requirements</title>
+  <meta name="title" content="Psychotherapy Now - ID Requirements">
+  <meta name="description"
+    content="View the identification and credential requirements for therapists joining the Psychotherapy Now AI-assisted platform.">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/ZARA_LOGO.png" type="image/svg+xml">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Wow.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    /* ===== PAGE WRAPPER ===== */
+    .idr-page-wrapper {
+      background: linear-gradient(135deg, rgba(16, 40, 60, 0.98), rgba(20, 60, 40, 0.98)), url('./bg.webp') center/cover fixed;
+      color: var(--white);
+      padding-top: 150px;
+      padding-bottom: 80px;
+      min-height: 100vh;
+    }
+
+    /* ===== GLASS CARD ===== */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(46, 139, 87, 0.4);
+      border-color: rgba(46, 139, 87, 0.5);
+    }
+
+    /* ===== HERO ===== */
+    .idr-hero {
+      text-align: center;
+      margin-bottom: 80px;
+      padding: 60px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .idr-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, rgba(46, 139, 87, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .idr-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(46, 139, 87, 0.15);
+      border: 1px solid rgba(46, 139, 87, 0.3);
+      color: #a8e6cf;
+      font-size: 1.3rem;
+      font-family: var(--ff-oswald);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 30px;
+      margin-bottom: 25px;
+    }
+
+    .idr-hero-title {
+      font-size: clamp(3.2rem, 5vw, 5rem);
+      font-family: var(--ff-oswald);
+      background: linear-gradient(90deg, #fff, #a8e6cf);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .idr-hero-text {
+      font-size: 1.8rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 650px;
+      margin: 0 auto 35px;
+      line-height: 1.8;
+    }
+
+    .idr-hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-family: var(--ff-oswald);
+      color: #a8e6cf;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ===== SECTION HEADER ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-family: var(--ff-oswald);
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .section-line {
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #2E8B57, #a8e6cf);
+      border-radius: 2px;
+      margin: 0 auto 20px;
+    }
+
+    .section-sub {
+      font-size: 1.6rem;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== DOCUMENT GRID ===== */
+    .doc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .doc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .doc-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-card-icon {
+      width: 65px;
+      height: 65px;
+      background: linear-gradient(135deg, #2E8B57, #1E4E79);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 2.8rem;
+      color: #a8e6cf;
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.3);
+    }
+
+    .doc-card-title {
+      font-size: 2rem;
+      font-family: var(--ff-oswald);
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .doc-card-desc {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .doc-card-tag {
+      display: inline-block;
+      background: rgba(46, 139, 87, 0.2);
+      border: 1px solid rgba(46, 139, 87, 0.4);
+      color: #a8e6cf;
+      font-size: 1.2rem;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-family: var(--ff-oswald);
+      letter-spacing: 1px;
+    }
+
+    .doc-card-tag.required {
+      background: rgba(244, 67, 54, 0.15);
+      border-color: rgba(244, 67, 54, 0.3);
+      color: #ff8a80;
+    }
+
+    .doc-card-tag.optional {
+      background: rgba(255, 193, 7, 0.1);
+      border-color: rgba(255, 193, 7, 0.3);
+      color: #ffe082;
+    }
+
+    /* ===== PROCESS STEPS ===== */
+    .process-section {
+      margin-bottom: 80px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 35px 25px;
+      position: relative;
+    }
+
+    .step-number {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2E8B57, #1E4E79);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-family: var(--ff-oswald);
+      color: #fff;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.4);
+    }
+
+    .step-title {
+      font-size: 1.8rem;
+      font-family: var(--ff-oswald);
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: 1.45rem;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.7;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .checklist-section {
+      margin-bottom: 80px;
+    }
+
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .checklist-panel {
+      padding: 35px;
+    }
+
+    .checklist-panel-title {
+      font-size: 2rem;
+      font-family: var(--ff-oswald);
+      color: #a8e6cf;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+    }
+
+    .checklist-item::before {
+      content: '\2713';
+      min-width: 24px;
+      height: 24px;
+      background: rgba(46, 139, 87, 0.2);
+      border: 1px solid rgba(46, 139, 87, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a8e6cf;
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+
+    .checklist-item.cross::before {
+      content: '\2716';
+      background: rgba(244, 67, 54, 0.15);
+      border-color: rgba(244, 67, 54, 0.3);
+      color: #ff8a80;
+    }
+
+    /* ===== IMPORTANT NOTICE ===== */
+    .notice-box {
+      background: linear-gradient(135deg, rgba(244, 196, 48, 0.1), rgba(244, 196, 48, 0.05));
+      border: 1px solid rgba(244, 196, 48, 0.3);
+      border-radius: 16px;
+      padding: 30px 35px;
+      margin-bottom: 80px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .notice-icon {
+      font-size: 3rem;
+      color: #F4C430;
+      flex-shrink: 0;
+    }
+
+    .notice-title {
+      font-size: 2rem;
+      font-family: var(--ff-oswald);
+      color: #F4C430;
+      margin-bottom: 10px;
+    }
+
+    .notice-text {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+    }
+
+    /* ===== CTA ===== */
+    .idr-cta {
+      text-align: center;
+      padding: 60px;
+      background: linear-gradient(135deg, rgba(46, 139, 87, 0.2), rgba(30, 78, 121, 0.2));
+      border-radius: 20px;
+      border: 1px solid rgba(168, 230, 207, 0.2);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+
+    .idr-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(168, 230, 207, 0.08) 0%, transparent 70%);
+      animation: pulse 5s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+
+    .idr-cta-title {
+      font-size: 3rem;
+      font-family: var(--ff-oswald);
+      color: #fff;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .idr-cta-text {
+      font-size: 1.6rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .idr-cta-btns {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-primary-glow {
+      background: linear-gradient(135deg, #2E8B57, #1E4E79);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1.7rem;
+      font-family: var(--ff-oswald);
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(46, 139, 87, 0.4);
+    }
+
+    .btn-primary-glow:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(46, 139, 87, 0.5);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: white;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1.7rem;
+      font-family: var(--ff-oswald);
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-white:hover {
+      border-color: #a8e6cf;
+      color: #a8e6cf;
+      transform: translateY(-3px);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .idr-hero-stats {
+        gap: 30px;
+      }
+
+      .idr-cta {
+        padding: 40px 20px;
+      }
+
+      .notice-box {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- #PRELOADER -->
+  <div class="preloader" data-preloader>
+    <div class="circle"></div>
+  </div>
+
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo" style="font-size: larger;">
+        <img src="./assets/images/therapy%20now%20logo.png" alt="Psychotherapy Now Logo" class="site-logo"
+          style="height: 80px; width: auto; display: block;">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/therapy%20now%20logo.png" alt="Psychotherapy Now Logo" class="site-logo"
+              style="height: 80px; width: auto; display: block;">
+          </a>
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link title-md">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a href="aboutus.html" class="navbar-link title-md">About Us</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="terms.html" class="navbar-link title-md">Terms of Use</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="id-requirements.html" class="navbar-link title-md">ID Requirements</a>
+          </li>
+
+          <li class="navbar-item auth-buttons-container">
+            <a href="login.html" class="navbar-link title-md auth-btn"
+              style="background-color: hsl(182, 100%, 35%); border-radius: 6px; text-align:center;">Login</a>
+            <a href="signup.html" class="navbar-link title-md auth-btn"
+              style="background-color: hsl(182, 100%, 35%); border-radius: 6px; text-align:center;">Signup</a>
+          </li>
+        </ul>
+
+        <ul class="social-list">
+          <li>
+            <a href="javascript:void(0)" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="social-link">
+              <ion-icon name="logo-pinterest"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" class="social-link">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main class="idr-page-wrapper">
+    <article class="container">
+
+      <!-- ===== HERO ===== -->
+      <section class="idr-hero animate__animated animate__fadeIn">
+        <div class="idr-hero-badge">
+          <ion-icon name="shield-checkmark-outline"></ion-icon>
+          Secure Verification
+        </div>
+        <h1 class="idr-hero-title">Therapist ID & Credential Requirements</h1>
+        <p class="idr-hero-text">To ensure the highest standard of care, all therapists joining Psychotherapy Now must
+          submit verified professional documents before accessing the platform.</p>
+        <!--
+          <a href="signup.html" class="btn has-before" style="display:inline-flex;">
+          <span class="span title-md">Start Your Application</span>
+        </a>
+      -->
+
+        <div class="idr-hero-stats">
+
+          <div class="stat-item">
+            <span class="stat-number">48h</span>
+            <span class="stat-label">Verification Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Secure & Private</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== REQUIRED DOCUMENTS ===== -->
+      <section class="animate__animated animate__fadeInUp" style="margin-bottom: 80px;">
+        <div class="section-header">
+          <h2 class="section-title">Required Documents</h2>
+          <div class="section-line"></div>
+          <p class="section-sub">Please prepare all of the following documents before beginning your registration.</p>
+        </div>
+
+        <div class="doc-grid">
+          <div class="doc-card glass-card">
+            <div class="doc-card-icon">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+            <h3 class="doc-card-title">Professional License</h3>
+            <p class="doc-card-desc">A valid, current license issued by your state or national licensing board
+              confirming your authorization to practice psychotherapy.</p>
+            <span class="doc-card-tag required">Required</span>
+          </div>
+
+
+
+
+
+          <div class="doc-card glass-card">
+            <div class="doc-card-icon">
+              <ion-icon name="medical-outline"></ion-icon>
+            </div>
+            <h3 class="doc-card-title">NPI Number</h3>
+            <p class="doc-card-desc">National Provider Identifier for practitioners registered in the United States.
+              International therapists may provide local equivalent.</p>
+            <span class="doc-card-tag required">Required</span>
+          </div>
+
+
+
+
+        </div>
+      </section>
+
+      <!-- (SECTIONS HIDDEN PER USER REQUEST)
+      ===== PROCESS STEPS ===== 
+      <section class="process-section animate__animated animate__fadeInUp">
+        <div class="section-header">
+          <h2 class="section-title">Verification Process</h2>
+          <div class="section-line"></div>
+          <p class="section-sub">Here is how we verify your credentials to keep the platform secure.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card glass-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Create Account</h3>
+            <p class="step-desc">Register with your professional email address and create a secure account on
+              Psychotherapy Now.</p>
+          </div>
+          <div class="step-card glass-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Upload Documents</h3>
+            <p class="step-desc">Securely upload your required credentials through our encrypted document portal.</p>
+          </div>
+          <div class="step-card glass-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Verification Review</h3>
+            <p class="step-desc">Our compliance team reviews all submitted documents. This typically takes 24-48 hours.
+            </p>
+          </div>
+          <div class="step-card glass-card">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Get Approved</h3>
+            <p class="step-desc">Receive approval notification by email and gain full access to all platform features.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      ===== CHECKLIST ===== 
+      <section class="checklist-section animate__animated animate__fadeInUp" style="margin-top: 80px;">
+        <div class="section-header">
+          <h2 class="section-title">Document Submission Guidelines</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="checklist-grid">
+          <div class="checklist-panel glass-card">
+            <h3 class="checklist-panel-title">
+              <ion-icon name="checkmark-circle-outline"></ion-icon>
+              Accepted Formats
+            </h3>
+            <div class="checklist-item">PDF documents (preferred) - max 10MB per file</div>
+            <div class="checklist-item">High-resolution JPEG or PNG images (min 300dpi)</div>
+            <div class="checklist-item">Documents must be clearly legible and fully visible</div>
+            <div class="checklist-item">All documents must be in English or officially translated</div>
+            <div class="checklist-item">Licenses must show expiry date and be currently valid</div>
+            <div class="checklist-item">Government ID must show full legal name and photo</div>
+          </div>
+          <div class="checklist-panel glass-card">
+            <h3 class="checklist-panel-title" style="color: #ff8a80;">
+              <ion-icon name="close-circle-outline" style="color: #ff8a80;"></ion-icon>
+              Not Accepted
+            </h3>
+            <div class="checklist-item cross">Blurry, cropped, or partially visible documents</div>
+            <div class="checklist-item cross">Expired licenses or outdated credentials</div>
+            <div class="checklist-item cross">Screenshots or photos of screens</div>
+            <div class="checklist-item cross">Documents belonging to another individual</div>
+            <div class="checklist-item cross">Unverified or self-certified credentials</div>
+            <div class="checklist-item cross">Files larger than 10MB or unsupported formats</div>
+          </div>
+        </div>
+      </section>
+      -->
+
+      <!-- ===== IMPORTANT NOTICE ===== -->
+      <div class="notice-box animate__animated animate__fadeInUp" style="margin-top: 50px;">
+        <div class="notice-icon">
+          <ion-icon name="warning-outline"></ion-icon>
+        </div>
+        <div>
+          <h4 class="notice-title">Important: Data Privacy & Security</h4>
+          <p class="notice-text">All submitted documents are encrypted using industry-standard AES-256 encryption and
+            stored in HIPAA-compliant servers. Your credentials are reviewed only by our certified compliance team and
+            are never shared with third parties. Documents are permanently deleted after verification is complete unless
+            legally required to be retained.</p>
+        </div>
+      </div>
+
+      <!-- ===== CTA ===== -->
+      <section class="idr-cta animate__animated animate__fadeInUp">
+        <h2 class="idr-cta-title">Ready to Join Psychotherapy Now?</h2>
+        <p class="idr-cta-text">Prepare your documents and start your application today. Verification typically
+          completes within 48 hours.</p>
+        <div class="idr-cta-btns">
+
+          <!--  
+          <a href="signup.html" class="btn-primary-glow">Begin Registration</a>
+
+        -->
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- #FOOTER -->
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+    <div class="container">
+
+      <!-- Top Section -->
+      <div class="footer-layout-top" style="justify-content: center; text-align: center;">
+        <div class="footer-top-left" style="display: flex; flex-direction: column; align-items: center;">
+          <a href="index.html" class="logo">
+            <img src="./assets/images/therapy now logo.png" alt="Psychotherapy Now Logo" class="site-logo footer-logo"
+              style="margin-bottom:10px;">
+          </a>
+          <h2 class="footer-headline" style="text-transform: uppercase;">Psychotherapy Now</h2>
+        </div>
+      </div>
+
+      <!-- Middle Section -->
+      <div class="footer-layout-middle" style="justify-content: space-between; gap: 30px;">
+
+        <div class="footer-mid-item" style="flex: 1; min-width: 250px;">
+          <h4 class="info-title">PHONE NUMBER</h4>
+          <div class="info-content" style="margin-bottom: 20px;">
+            <ion-icon name="call"></ion-icon>
+            <a href="tel:9144190088" class="info-link">(914) 419-0088</a>
+          </div>
+
+        </div>
+
+        <div class="footer-mid-item" style="flex: 1; min-width: 250px;">
+          <h4 class="info-title">EMAIL ADDRESS</h4>
+          <div class="info-content" style="margin-bottom: 20px;">
+            <ion-icon name="mail-open"></ion-icon>
+            <a href="mailto:contact@psychotherapynow.com" class="info-link">contact@psychotherapynow.com</a>
+          </div>
+          <div class="info-content">
+            <ion-icon name="mail-open"></ion-icon>
+            <a href="mailto:info@psychotherapynow.com" class="info-link">info@psychotherapynow.com</a>
+          </div>
+        </div>
+
+        <div class="footer-mid-item" style="flex: 1; min-width: 250px;">
+          <h4 class="info-title">USEFUL LINKS</h4>
+          <div class="info-content" style="margin-bottom: 5px;">
+            <a href="aboutus.html" class="info-link">About Us</a>
+          </div>
+          <div class="info-content" style="margin-bottom: 5px;">
+            <a href="terms.html" class="info-link">Terms of Use</a>
+          </div>
+          <div class="info-content">
+            <a href="id-requirements.html" class="info-link">ID Requirements</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="footer-layout-bottom" style="display: flex; justify-content: center; text-align: center;">
+        <p class="copyright" style="text-align: center; width: 100%;">
+          &copy;2025 Psychotherapy Now. All rights reserved by Jonathan Kongen
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- #BACK TO TOP -->
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up"></ion-icon>
+  </a>
+
+  <!-- custom js -->
+  <script>
+    const handlePreloader = function () {
+      const preloader = document.querySelector("[data-preloader]");
+      if (preloader) {
+        preloader.classList.add("loaded");
+        document.body.classList.add("loaded");
+      }
+    }
+    window.addEventListener("load", handlePreloader);
+    setTimeout(handlePreloader, 3000); 
+  </script>
+  <script src="./assets/js/script.js"></script>
+  <!-- ionicon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>new WOW().init();</script>
+
+</body>
+
+</html>
