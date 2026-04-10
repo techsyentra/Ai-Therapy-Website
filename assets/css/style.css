@@ -539,7 +539,7 @@ body.nav-active {
 }
 
 .hero-banner img {
-  width: 100%;
+  width: 70%;
   max-width: 750px;
   /* increased from 500px for a larger display */
   height: auto;
@@ -568,9 +568,11 @@ body.nav-active {
 }
 
 .hero-title {
+  font-size: 50px !important;
   color: white;
   margin-block: 20px 30px;
-  font-size: clamp(2.8rem, 4vw + 1rem, 4.5rem); /* slightly reduced for better fit */
+  font-size: clamp(2.8rem, 4vw + 1rem, 4.5rem);
+  /* slightly reduced for better fit */
 }
 
 .hero-card {
@@ -1205,7 +1207,8 @@ body.nav-active {
 
   .hero .container {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr; /* Image side made larger */
+    grid-template-columns: 0.9fr 1.1fr;
+    /* Image side made larger */
     align-items: center;
   }
 
@@ -1321,7 +1324,8 @@ body.nav-active {
    */
 
   .hero .container {
-    grid-template-columns: 0.7fr 1.3fr; /* Text area smaller, Image area larger */
+    grid-template-columns: 0.7fr 1.3fr;
+    /* Text area smaller, Image area larger */
     gap: 60px;
   }
 
@@ -3627,15 +3631,15 @@ ul.ullist {
 
 @media(max-width: 768px) {
   .footer-layout-top {
-     flex-direction: column;
-     gap: 30px;
-     align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
   }
 }
 
 .footer-top-left .logo img {
-  height: 100px; 
-  width: auto; 
+  height: 100px;
+  width: auto;
   margin-bottom: 20px;
 }
 
@@ -3739,7 +3743,8 @@ ul.ullist {
   margin-top: 2px;
 }
 
-.info-link, .info-text {
+.info-link,
+.info-text {
   font-size: 15px;
   color: var(--white);
   opacity: 0.9;
@@ -3793,7 +3798,8 @@ ul.ullist {
   text-decoration: none;
 }
 
-.footer-bottom-links a:hover, .footer-bottom-links a.active {
+.footer-bottom-links a:hover,
+.footer-bottom-links a.active {
   color: var(--verdigris);
 }
 
