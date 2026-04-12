@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Licensed Clinician Portal</title>
+  <style>
+    :root{
+      --bg:#020617;
+      --panel:#0f172a;
+      --panel2:#111827;
+      --card:#0b1220;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --muted2:#94a3b8;
+      --line:#334155;
+      --accent:#22d3ee;
+      --accent-soft:rgba(34,211,238,.12);
+      --ok:#10b981;
+      --warn:#f59e0b;
+      --bad:#fb7185;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#020617 0%, #0f172a 100%);
+    }
+    .wrap{max-width:1220px;margin:0 auto;padding:34px 20px 64px}
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      margin-bottom:28px;
+      align-items:end;
+    }
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--accent-soft);
+      color:#a5f3fc;
+      border:1px solid rgba(34,211,238,.35);
+      font-size:14px;
+    }
+    h1{
+      font-size:46px;
+      line-height:1.08;
+      margin:16px 0 12px;
+      letter-spacing:-0.02em;
+    }
+    .sub{
+      font-size:18px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:780px;
+    }
+    .panel{
+      background:rgba(17,24,39,.75);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:18px;
+      box-shadow:0 18px 40px rgba(0,0,0,.22);
+    }
+    .status-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:14px;
+    }
+    .eyebrow{
+      color:#a5f3fc;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-weight:700;
+    }
+    .status-title{font-size:18px;font-weight:700;margin-top:6px}
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid #475569;
+      border-radius:999px;
+      padding:8px 12px;
+      font-size:12px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .pill.draft{background:#1e293b;color:#e2e8f0}
+    .pill.pending{background:rgba(245,158,11,.12);color:#fde68a;border-color:rgba(245,158,11,.35)}
+    .pill.approved{background:rgba(16,185,129,.12);color:#bbf7d0;border-color:rgba(16,185,129,.35)}
+    .pill.rejected{background:rgba(251,113,133,.12);color:#fecdd3;border-color:rgba(251,113,133,.35)}
+    .mini-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .mini-step{
+      background:#020617;
+      border:1px solid #1e293b;
+      border-radius:18px;
+      padding:16px;
+    }
+    .mini-step h3{
+      margin:0 0 8px;
+      font-size:14px;
+    }
+    .mini-step p{
+      margin:0;
+      font-size:12px;
+      line-height:1.6;
+      color:var(--muted2);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+    .card{
+      background:rgba(15,23,42,.92);
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:0 18px 40px rgba(0,0,0,.24);
+    }
+    .card h2{
+      margin:10px 0 10px;
+      font-size:30px;
+      letter-spacing:-0.02em;
+    }
+    .help{
+      color:var(--muted);
+      margin:0 0 20px;
+      line-height:1.65;
+      font-size:14px;
+    }
+    .top-row{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:6px;
+    }
+    .tag{
+      padding:10px 12px;
+      font-size:12px;
+      border-radius:16px;
+      border:1px solid rgba(34,211,238,.2);
+      background:rgba(34,211,238,.1);
+      color:#a5f3fc;
+      white-space:nowrap;
+    }
+    .row2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .field{margin-bottom:16px}
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+      font-weight:700;
+      color:#e2e8f0;
+    }
+    input, select{
+      width:100%;
+      padding:14px 15px;
+      border-radius:18px;
+      border:1px solid #475569;
+      background:#020617;
+      color:#fff;
+      font-size:15px;
+      outline:none;
+    }
+    input:focus, select:focus{border-color:var(--accent)}
+    .filebox{
+      border:1px dashed #475569;
+      border-radius:18px;
+      padding:14px;
+      background:#020617;
+    }
+    .tiny{
+      font-size:12px;
+      color:var(--muted2);
+      margin-top:8px;
+      line-height:1.5;
+    }
+    .good{color:#86efac}
+    .error{
+      color:#fda4af;
+      font-size:12px;
+      margin-top:7px;
+      display:none;
+    }
+    .checks{
+      margin:6px 0 18px;
+      border:1px solid #1e293b;
+      border-radius:18px;
+      background:rgba(2,6,23,.72);
+      padding:16px;
+    }
+    .checkrow{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      margin-bottom:12px;
+      font-size:14px;
+      line-height:1.6;
+      color:var(--muted);
+    }
+    .checkrow:last-child{margin-bottom:0}
+    .checkrow input[type="checkbox"]{
+      width:16px;height:16px;flex:0 0 auto;margin-top:4px;
+    }
+    .linkbtn, .linkish{
+      color:#a5f3fc;
+      text-decoration:underline;
+      text-underline-offset:4px;
+      background:none;
+      border:none;
+      padding:0;
+      cursor:pointer;
+      font:inherit;
+    }
+    .btn{
+      width:100%;
+      border:none;
+      border-radius:18px;
+      padding:15px 18px;
+      font-size:16px;
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .15s ease, opacity .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);color:#082f49}
+    .btn-secondary{background:#f8fafc;color:#0f172a}
+    .btn-disabled{
+      background:#1e293b;
+      color:#64748b;
+      cursor:not-allowed;
+    }
+    .notice{
+      margin-top:16px;
+      border-radius:18px;
+      padding:14px 16px;
+      font-size:14px;
+      line-height:1.6;
+      display:none;
+    }
+    .notice.pending{
+      display:none;
+      background:rgba(245,158,11,.12);
+      border:1px solid rgba(245,158,11,.3);
+      color:#fde68a;
+    }
+    .workflow-box{
+      border:1px solid #1e293b;
+      border-radius:18px;
+      background:rgba(2,6,23,.62);
+      padding:16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+    .section-grid{
+      display:grid;
+      gap:28px;
+    }
+    .info-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:16px;
+    }
+    .info{
+      border:1px solid #1e293b;
+      background:#020617;
+      border-radius:18px;
+      padding:16px;
+    }
+    .info h3{
+      margin:0 0 8px;
+      font-size:16px;
+    }
+    .info p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .prod-notes{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+    .prod-note{
+      border:1px solid #1e293b;
+      background:#020617;
+      border-radius:18px;
+      padding:14px 16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.65;
+    }
+    .modal{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.68);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+      z-index:1000;
+    }
+    .modal.open{display:flex}
+    .modal-card{
+      width:min(860px, 100%);
+      max-height:84vh;
+      overflow:hidden;
+      border-radius:28px;
+      border:1px solid #334155;
+      background:#020617;
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+    }
+    .modal-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:18px 20px;
+      border-bottom:1px solid #1e293b;
+    }
+    .modal-head h3{margin:0;font-size:22px}
+    .close{
+      background:none;
+      color:#cbd5e1;
+      border:1px solid #475569;
+      border-radius:999px;
+      width:36px;height:36px;
+      cursor:pointer;
+      font-size:18px;
+    }
+    .modal-body{
+      padding:20px;
+      overflow:auto;
+      max-height:calc(84vh - 74px);
+      white-space:pre-line;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
+    }
+    .forgot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin:4px 0 18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media (max-width: 980px){
+      .hero,.grid,.row2,.info-grid,.mini-grid{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .tag{white-space:normal}
+      .top-row,.status-head,.forgot{display:block}
+      .tag,.pill{margin-top:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="badge">Psychotherapy Platform for Licensed Clinicians</div>
+        <h1>Secure clinician registration, review, and login</h1>
+        <div class="sub">
+          Secure portal for licensed professionals to register and access AI-assisted psychotherapy tools.
+        </div>
+      </div>
+      <div class="panel">
+        <div class="status-head">
+          <div>
+            <div class="eyebrow">Registration status</div>
+            <div class="status-title">Current account state</div>
+          </div>
+          <div id="statusPill" class="pill pending">Pending or Approved</div>
+        </div>
+        <div class="mini-grid">
+          <div class="mini-step">
+            <h3>Account creation</h3>
+            <p>Registrant completes required identity and credential fields.</p>
+          </div>
+          <div class="mini-step">
+            <h3>License review</h3>
+            <p>Uploaded license enters manual verification before activation.</p>
+          </div>
+          <div class="mini-step">
+            <h3>Access control</h3>
+            <p>ONLY APPROVED ACCOUNTS CAN LOG IN TO PLATFORM.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="top-row">
+          <div>
+            <div class="eyebrow">Registration</div>
+            <h2>Create your clinician account</h2>
+            <p class="help">
+              Complete all required fields. Access remains disabled until professional verification is approved.
+            </p>
+          </div>
+          <div class="tag">License verification required</div>
+        </div>
+
+        <form id="regForm" novalidate>
+          <div class="row2">
+            <div class="field">
+              <label for="firstName">First name</label>
+              <input id="firstName" type="text" placeholder="Enter first name" />
+              <div class="error" id="err-firstName">First name is required.</div>
+            </div>
+            <div class="field">
+              <label for="lastName">Last name</label>
+              <input id="lastName" type="text" placeholder="Enter last name" />
+              <div class="error" id="err-lastName">Last name is required.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="state">State of licensure</label>
+            <select id="state">
+              <option value="">Select state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+              <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+              <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+              <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+              <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+              <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+              <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+              <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+              <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+              <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+              <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+              <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+              <option>Wisconsin</option><option>Wyoming</option>
+            </select>
+            <div class="error" id="err-state">State of licensure is required.</div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="" />
+            <div class="error" id="err-email">Enter a valid email address.</div>
+          </div>
+
+          <div class="field">
+            <label for="license">Upload copy of state license</label>
+            <div class="filebox">
+              <input id="license" type="file" accept=".pdf,.jpg,.jpeg,.png" />
+              <div class="tiny">Accepted formats: PDF, JPG, PNG. Manual review required before activation.</div>
+              <div class="tiny good" id="licenseSelected" style="display:none"></div>
+            </div>
+            <div class="error" id="err-license">A license file is required.</div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label for="username">Create user name</label>
+              <input id="username" type="text" placeholder="Choose a user name" />
+              <div class="error" id="err-username">User name is required.</div>
+            </div>
+            <div class="field">
+              <label for="password">Create password</label>
+              <input id="password" type="password" placeholder="8+ characters, letters and numbers" />
+              <div class="tiny">Minimum 8 characters. Must include letters and numbers.</div>
+              <div class="error" id="err-password">Use at least 8 characters with letters and numbers.</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" type="password" placeholder="Re-enter password" />
+            <div class="error" id="err-confirmPassword">Passwords do not match.</div>
+          </div>
+
+          <div class="checks">
+            <div class="checkrow">
+              <input id="agreeTerms" type="checkbox" />
+              <div>
+                I agree to the
+                <button type="button" class="linkbtn" data-open="termsModal">Terms of Agreement</button>.
+              </div>
+            </div>
+            <div class="error" id="err-agreeTerms">You must agree to the Terms of Agreement.</div>
+
+            <div class="checkrow">
+              <input id="agreeProfessional" type="checkbox" />
+              <div>
+                I agree to the
+                <button type="button" class="linkbtn" data-open="professionalModal">Professional Use Agreement</button>.
+              </div>
+            </div>
+            <div class="error" id="err-agreeProfessional">You must agree to the Professional Use Agreement.</div>
+          </div>
+
+          <div class="workflow-box">
+            <strong style="color:#e2e8f0">Verification workflow:</strong>
+            After submission, the account enters manual review. The administrator approves licensure,
+            confirms document readability, and activates access only after approval.
+          </div>
+
+          <button id="submitBtn" type="submit" class="btn btn-primary" style="margin-top:18px">Submit registration</button>
+
+          <div id="pendingNotice" class="notice pending">
+            Registration submitted. Current status: <strong>Pending review</strong>.
+            Login remains disabled until license verification is approved.
+          </div>
+        </form>
+      </section>
+
+      <div class="section-grid">
+        <section class="card">
+          <div class="eyebrow">Login</div>
+          <h2>Sign in</h2>
+          <p class="help">
+            Existing users can log in securely below. In production, login should remain blocked
+            until the account has an approved state.
+          </p>
+
+          <div class="field">
+            <label for="loginIdentifier">User name or email</label>
+            <input id="loginIdentifier" type="text" placeholder="Enter user name or email" />
+          </div>
+
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="Enter password" />
+          </div>
+
+          <div class="forgot">
+            <label style="margin:0;font-weight:400;color:#cbd5e1">
+              <input type="checkbox" style="width:16px;height:16px;vertical-align:middle;margin-right:8px" />
+              Remember me
+            </label>
+            <button type="button" class="linkbtn">Forgot password?</button>
+          </div>
+
+          <button id="loginBtn" type="button" class="btn btn-disabled">Login disabled until approved</button>
+        </section>
+
+        <section class="card">
+          <h2 style="font-size:24px;margin-top:0">License verification workflow</h2>
+          <div class="info-grid">
+            <div class="info">
+              <h3>Registration submitted</h3>
+              <p>Registrant uploads license document, agrees to both policies, and creates account credentials.</p>
+            </div>
+            <div class="info">
+              <h3>Admin review</h3>
+              <p>Administrator reviews document quality, state of licensure, identity match, and completeness.</p>
+            </div>
+            <div class="info">
+              <h3>Approval or correction</h3>
+              <p>Account is approved for activation or returned for correction if documentation is incomplete or unreadable.</p>
+            </div>
+            <div class="info">
+              <h3>Access control</h3>
+              <p>Only verified accounts can LOG IN into the live platform. Pending accounts remain blocked from login.</p>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="termsModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Terms of Agreement</h3>
+        <button class="close" data-close="termsModal">×</button>
+      </div>
+      <div class="modal-body">1. This platform is intended solely for licensed mental health professionals and other approved professional users.
+2. Access is subject to account review, licensure verification, and approval by the platform administrator.
+3. The platform is designed as an AI reflective tool used under live professional supervision. It is not a substitute for independent clinical judgment.
+4. Users agree not to enter protected health information or identifying patient information unless and until the platform is specifically configured and approved for compliant handling of such data.
+5. The platform owner may suspend, deny, or revoke access for incomplete registration, failed verification, suspected misuse, inaccurate submissions, or breach of platform rules.
+6. By registering, the user certifies that submitted information is accurate and belongs to the registering professional.
+7. Additional legal, privacy, and professional-use terms may apply and should be reviewed before activation.</div>
+    </div>
+  </div>
+
+  <div class="modal" id="professionalModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Professional Use Agreement</h3>
+        <button class="close" data-close="professionalModal">×</button>
+      </div>
+      <div class="modal-body">1. The registrant represents that they are applying for access in a professional capacity.
+2. The registrant agrees that use of the platform will remain within the scope of lawful and ethical professional practice.
+3. The registrant agrees that the platform will be used only as permitted by applicable law, licensure rules, supervision structure, and platform policies.
+4. The registrant understands that registration does not guarantee approval, activation, or continued access.
+5. The registrant agrees not to share credentials and not to permit unauthorized persons to access the platform.
+6. The registrant agrees that uploaded licensure documents may be reviewed for identity and professional verification purposes.
+7. The registrant agrees to comply with all future administrative requests reasonably necessary to verify professional eligibility.</div>
+    </div>
+  </div>
+
+  <script>
+    const statusPill = document.getElementById('statusPill');
+    const loginBtn = document.getElementById('loginBtn');
+    const pendingNotice = document.getElementById('pendingNotice');
+    const regForm = document.getElementById('regForm');
+
+    function setStatus(status){
+      statusPill.className = 'pill ' + status;
+      if(status === 'pending') statusPill.textContent = 'Pending';
+      if(status === 'approved') statusPill.textContent = 'Approved';
+      if(status === 'rejected') statusPill.textContent = 'Needs correction';
+
+      if(status === 'approved'){
+        loginBtn.className = 'btn btn-secondary';
+        loginBtn.textContent = 'Log in';
+        loginBtn.disabled = false;
+      } else {
+        loginBtn.className = 'btn btn-disabled';
+        loginBtn.textContent = 'Login disabled until approved';
+        loginBtn.disabled = true;
+      }
+    }
+
+    function validEmail(v){
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+    function validPassword(v){
+      return /^(?=.*[A-Za-z])(?=.*\d).{8,}$/.test(v);
+    }
+    function showError(id, show){
+      document.getElementById(id).style.display = show ? 'block' : 'none';
+    }
+
+    document.getElementById('license').addEventListener('change', function(){
+      const box = document.getElementById('licenseSelected');
+      if(this.files && this.files[0]){
+        box.style.display = 'block';
+        box.textContent = 'Selected file: ' + this.files[0].name;
+      } else {
+        box.style.display = 'none';
+        box.textContent = '';
+      }
+    });
+
+    regForm.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const lastName = document.getElementById('lastName').value.trim();
+      const state = document.getElementById('state').value;
+      const email = document.getElementById('email').value.trim();
+      const license = document.getElementById('license').files[0];
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const agreeTerms = document.getElementById('agreeTerms').checked;
+      const agreeProfessional = document.getElementById('agreeProfessional').checked;
+
+      const checks = {
+        firstName: !firstName,
+        lastName: !lastName,
+        state: !state,
+        email: !validEmail(email),
+        license: !license,
+        username: !username,
+        password: !validPassword(password),
+        confirmPassword: !(confirmPassword && confirmPassword === password),
+        agreeTerms: !agreeTerms,
+        agreeProfessional: !agreeProfessional
+      };
+
+      showError('err-firstName', checks.firstName);
+      showError('err-lastName', checks.lastName);
+      showError('err-state', checks.state);
+      showError('err-email', checks.email);
+      showError('err-license', checks.license);
+      showError('err-username', checks.username);
+      showError('err-password', checks.password);
+      showError('err-confirmPassword', checks.confirmPassword);
+      showError('err-agreeTerms', checks.agreeTerms);
+      showError('err-agreeProfessional', checks.agreeProfessional);
+
+      const hasErrors = Object.values(checks).some(Boolean);
+      if(hasErrors){
+        pendingNotice.style.display = 'none';
+        setStatus('draft');
+        return;
+      }
+
+      setStatus('pending');
+      pendingNotice.style.display = 'block';
+    });
+
+    document.querySelectorAll('[data-open]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById(btn.getAttribute('data-open')).classList.add('open');
+      });
+    });
+
+    document.querySelectorAll('[data-close]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById(btn.getAttribute('data-close')).classList.remove('open');
+      });
+    });
+
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if(e.target === modal) modal.classList.remove('open');
+      });
+    });
+
+    setStatus('pending');
+  </script>
+</body>
+</html>
